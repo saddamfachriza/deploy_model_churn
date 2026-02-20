@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pickle
 
 ## Menampilkan Judul
 st.title('Churn Predictor')
@@ -70,4 +71,5 @@ with col2:
         st.write("This customer will NOT CHURN")
     #display probability
     st.write(f"Probability of Churn : {probability:.2f}")
+
 
