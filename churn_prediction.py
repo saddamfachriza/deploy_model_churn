@@ -19,7 +19,7 @@ def create_user_input() :
     product_number=st.sidebar.radio("product_number", [1,2,3,4])
     credit_card=st.sidebar.radio("credit_card", [0,1])
     active_member=st.sidebar.radio("active_member",[0,1])
-    estimated_salary=st.sidebar.slider('estimated_salary', min_value=11.58, max_value=199992.48,value=100000.0)
+    estimated_salary=st.sidebar.number_input('estimated_salary', min_value=11.58, max_value=199992.48,value=100000.0)
 
     ## Categorical 'gender' 'country'   
     gender=st.sidebar.radio('gender', ['Female','Male'])
@@ -51,7 +51,7 @@ col1, col2=st.columns(2)
 #left
 with col1:
     st.subheader('Customer Feature')
-    st.write(data_customer.transpose())
+    st.write(data_customer.transpose().rename(columns={0:'Feature',1:'Value'}))
 
 #load model
 with open('best_model.sav','rb') as f:
@@ -71,5 +71,4 @@ with col2:
         st.write("This customer will NOT CHURN")
     #display probability
     st.write(f"Probability of Churn : {probability:.2f}")
-
 
