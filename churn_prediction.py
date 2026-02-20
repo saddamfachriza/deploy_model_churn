@@ -16,7 +16,7 @@ def create_user_input() :
     age=st.sidebar.slider("age", min_value=18, max_value=92, value=30)
     tenure=st.sidebar.slider("tenure", min_value=0, max_value=10, value=5)
     balance=st.sidebar.slider("balance", min_value=0.0, max_value=250898.09, value=100000.0)
-    product_number=st.sidebar.radio("product_number", [1,2,3,4])
+    products_number=st.sidebar.radio("products_number", [1,2,3,4])
     credit_card=st.sidebar.radio("credit_card", [0,1])
     active_member=st.sidebar.radio("active_member",[0,1])
     estimated_salary=st.sidebar.number_input('estimated_salary', min_value=11.58, max_value=199992.48,value=100000.0)
@@ -34,7 +34,7 @@ def create_user_input() :
         "age":age,
         "tenure":tenure,
         "balance":balance,
-        "product_number":product_number,
+        "products_number":products_number,
         "credit_card":credit_card,
         "active_member":active_member,
         "estimated_salary":estimated_salary,
@@ -71,4 +71,5 @@ with col2:
         st.write("This customer will NOT CHURN")
     #display probability
     st.write(f"Probability of Churn : {probability:.2f}")
+
 
