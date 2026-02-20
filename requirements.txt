@@ -1,7 +1,8 @@
 streamlit
 joblib
+pandas
 numpy
-imblearn==0.14.1
+scikit-learn
 category_encoders
 xgboost
-sklearn==1.8.0
+imbalanced-learn
