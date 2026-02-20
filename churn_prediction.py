@@ -58,8 +58,8 @@ with open('best_model.sav','rb') as f:
     model_loaded=pickle.load(f)
 
 #predict to customer data
-target=model_loaded.predict(data_customer) #target 1 atau 0
-probability=model_loaded.predict_proba(data_customer)[0]
+target = model_loaded.predict(data_customer)[0]
+probability = model_loaded.predict_proba(data_customer)[0][1]
 
 #menampilkan hasil prediksi
 #right
@@ -71,5 +71,6 @@ with col2:
         st.write("This customer will NOT CHURN")
     #display probability
     st.write(f"Probability of Churn : {probability:.2f}")
+
 
 
